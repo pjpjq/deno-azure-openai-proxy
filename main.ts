@@ -59,6 +59,8 @@ async function requestAzure(method: string, body: any, path: string, authKey?: s
     if (modelName) {
         deployName = mapper[modelName] || modelName;
     }
+    // Ensure temperature is set to 0
+    body.temperature = 0;
  }
 
   const fetchAPI:string = `https://${resourceName}.openai.azure.com/openai/deployments/${deployName}/${path}?api-version=${apiVersion}`;
