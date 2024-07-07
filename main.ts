@@ -19,6 +19,7 @@ const mapper:any = {
   'gpt-4-vision-preview': Deno.env.get("DEPLOY_NAME_GPT4V"),
   'dall-e-3': typeof Deno.env.get("DEPLOY_NAME_DALLE3") !== 'undefined' ? Deno.env.get("DEPLOY_NAME_DALLE3") : "dalle3",
   // Other mapping rules can be added here.
+  'gpt-4o': Deno.env.get("DEPLOY_NAME_GPTO"),
 };
 
 async function handleRequest(request:Request):Promise<Response> {
